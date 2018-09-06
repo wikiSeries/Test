@@ -1,14 +1,15 @@
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
 
 <head th:replace="fragments/head :: head"></head>
+<meta charset="UTF-8" />
 
 <body>
+	<div class="cointainer-fluid">
+		<div th:replace="fragments/navigation :: navigation"></div>
+		<div layout:fragment="content"></div>
+	</div>
 
-	<div th:replace="fragments/navigation :: navigation"></div>
-	<div layout:fragment="content"></div>
-	<div th:replace = "fragments/footer :: footer"></div>
-	<div th:replace = "fragments/subFooter :: subFooter"></div>
-	
 </body>
 
 </html>

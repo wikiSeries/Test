@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html 	xmlns:th="http://www.thymeleaf.org" 
-		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
-		layout:decorator="layouts/layout">
-
-	<body>
-				
-		<div layout:fragment="content">
-			<div th:replace="fragments/slider :: slide"></div>
-			<div th:replace="fragments/gallery :: gallery"></div>			
-		</div>
-	</body>
+<html xmlns:th="http://wwww.thymeleaf.org">
+<body>
+	<h1 th:text="${username}"></h1>
+	<a href="/logout">cerrar sesion</a>
+</body>
 </html>
