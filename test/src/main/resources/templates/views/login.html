@@ -1,10 +1,19 @@
 <meta charset="UTF-8" />
 <div layout:fragment="content" layout:decorator="layouts/layout">
+	<h1 th:text="#{label.test}"></h1>
+	<span th:text="#{lang.choseLanguage}"></span>
+	<select id="locale">
+	    <option value=""></option>
+	   	<option value="es" th:text="#{lang.es}"></option>
+	    <option value="en" th:text="#{lang.en}"></option>
+	    <option value="fr" th:text="#{lang.fr}"></option>
+	</select>
+	
 	<div class="row">
 		<div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
 			<div class="card card-signin my-5 background-color-ghostwhite">
 				<div class="card-body">
-					<h5 class="card-title text-center">Iniciar sesion</h5>
+					<h5 class="card-title text-center" th:text="#{login}"></h5>
 					<form  th:action ="@{/login}" method="post" class="form-signin">
 						<div class="form-label-group" th:if="${param.error}">
 							<p>Usuario o contraseña incorrectos</p>
@@ -50,3 +59,16 @@
 		</div>
 	</div>
 </div>
+
+<script>
+$(document).ready(function() {
+    $("#locale").change(function () {
+        var selectedOption = $('#locale').val();
+        if (selectedOption != ''){
+            window.location.replace('login?lang=' + selectedOption);
+        }
+        console.log(selectedOption);
+
+    });
+});
+</script>
